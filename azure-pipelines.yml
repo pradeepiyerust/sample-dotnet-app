@@ -13,5 +13,11 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'edcc8b4a-2126-4aba-8b34-fc6dc7c9e31d'
+    organization: 'pradeep-yegnanarayana-iyer-ust-in43067'
+    projectKey: 'my-sample-project'
+    projectName: 'my-sample-project'
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
