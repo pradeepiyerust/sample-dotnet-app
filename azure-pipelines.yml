@@ -13,11 +13,10 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
-
 - task: SonarQubePreBuild@1
   inputs:
     projectKey: 'my-sample-project'
     projectName: 'my-sample-project'
     connectedServiceName: 'd84a4be0-b36b-476c-bda1-bec126e92581'
+- script: dotnet build --configuration $(buildConfiguration)
+  displayName: 'dotnet build $(buildConfiguration)'
